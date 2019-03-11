@@ -1,0 +1,52 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #222222;
+    color: #ffffff;
+}
+.page {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.contents {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+#content-text {
+    font-weight: bold;
+    font-size: 5em;
+}
+
+input[type="button"] { 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    width: 100%;
+}
+.btn-on {
+	background-color: green !important;
+}
+.btn {
+	background-color: red;
+}
+.btn-disabled,.graybutton {
+	background-color: #bbb !important;
+}
+.information {
+    background-color: white;
+    color: black;
+    font-size: 28px;	
+}
+.vis-legend-text {
+  color: black; 
+}
