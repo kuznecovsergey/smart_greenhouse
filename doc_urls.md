@@ -25,19 +25,19 @@
 		"value": "25.1",
 	},
 
-    "humidity": {
+	"humidity": {
 		"date":  "1552908303",
 		"value": "20",
 	},
 
-    "valve" : {
+	"valve" : {
 		"date":  "1552908303",
- 		"value": "0",
+		"value": "0",
 	},
 
-    "window": {
+	"window": {
 		"date":  "1552908298",
- 		"value": "1",
+		"value": "1",
 	},
 	
 }
