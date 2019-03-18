@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.config.from_object(Configuration)
 
 db = SQLAlchemy(app)
+db.create_all()
 
 migrate = Migrate(app, db)
 manager = Manager(app)
