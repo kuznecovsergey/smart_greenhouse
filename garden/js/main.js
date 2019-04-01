@@ -119,6 +119,8 @@ function onError() {
 
 function onGetLatest(data, s, x) {
 
+    console.log(data)
+
 	if (data != undefined) {
 		console.log(data);
 		if (data.history != undefined) for (var type in dataGroups) {
