@@ -1,36 +1,32 @@
-# Умная теплица
+# Simple Vue.js SPA
 
-## Роли участников (предварительно)
-* **Кузнецов Сергей**: Менеджер проекта
-* **Антонов Сергей**: Backend разработчик (Главный по серверу) _(Стек технологий, Интерфейс взаимодействия с СУБД)_
-* **Вавилов Вадим**: Backend разработчик _(Структура базы данных проекта)_
-* **Лосев Владислав**: Backend разработчик _(Интерфейс взаимодействия с клиентом)_
-* **Моисеенко Савелий**: Backend разработчик _(Интерфейс взаимодействия с mosquitto)_
-* **Салов Данил**: Backend разработчик (Главный по управлению и симуляции) _(Cистема управления теплицей)_
-* **Алексей Беляев**: Разработчик эмулятора теплицы _(Система разностных уравнений, интерфейс взаимодействия с mosquitto)_
-* **Александр Башкин**: Frontend разработчик (Главный по клиенту) _(Интерфейс взаимодействия с сервером, отображение графиков)_ 
-* **Татьяна Серебренникова**: Frontend разработчик _(Дизайн приложения, верстка)_
+> A Vue.js Single Page Application Tutorial
 
-## Установка
-Клонирование проекта:
+## How to navigate
+
+You can check out any point of the tutorial using:
+
 ```
-git clone https://github.com/kuznecovsergey/smart_greenhouse.git
+git checkout step-?
 ```
 
-Получение обновлений с удаленного репозитория:
+To see the changes made between any two lessons use the `git diff` command:
+
 ```
-git pull
+git diff step-?..step-?
 ```
 
-После проведения изменений в файлах:
-```
-git add .
-git commit -m "краткий комментарий желательно на англ"
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
 ```
 
-Ввести почту и имя для первого раза. Заново провести операцию commit. Поместить изменения на удаленный репозиторий:
-```
-git push
-```
-Ввести свой логин и пароль от github.com. Наблюдать за изменением можно, обновив страницу github.com.
-
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
