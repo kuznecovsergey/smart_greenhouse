@@ -12,7 +12,9 @@ if __name__ == '__main__':
 	db.session.add(a)
 	db.session.commit()
 	time.sleep(3);
-	for item in db.session.query(Measurement).order_by(Measurement.id):
-		print(item.id_dev, ' ', item.value, ' ', item.time)
+	#id_dev = db.session.query(Measurement).order_by(Measurement.id)
+	for item in db.session.query(Measurement).order_by(Measurement.id)[-3:]:
+		print(item.time)
+		#print(item.id_dev, ' ', item.value, ' ', item.time)
 	print("Success!")
 	app.run()
