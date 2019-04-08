@@ -21,6 +21,7 @@ def on_get_temp(client, userdata, msg):
 	print("влажность: %d" % hum)
 	print("темп: %d" % temp)
 	print()
+	# TODO add write to DB
 
 client = mqtt.Client()
 client.on_connect = on_connect
