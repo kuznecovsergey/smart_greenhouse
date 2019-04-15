@@ -5,16 +5,20 @@ var MQTT_CLIENT = 'smartgarden_emul';
 var EUI_ADC = "807B85902000021E";
 var EUI_me = "807B85902000021C";
 var TIMER_INTERVAL = 2500;
+
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://'+MQTT_ADDRESS+':'+MQTT_PORT, MQTT_CLIENT);
+
 client.on('connect', onConnected);
 client.on('message', onMessageReceived);
+
 var GPIO = [1, 1];
+
 function onMessageReceived(topic, message) {
 	var t = topic.toString();
 	var m = message.toString();
 	console.log(' > ', t, m);
-	if (t != "devices/"+PROTOCOL+"/"+EUI_me+"/miso/gpio") return;
+	if (t != "greenhouse/miso/gpio") return;
 	if (m == "get all") {
 		var data_GPIO = {
 			data : {
@@ -27,7 +31,9 @@ function onMessageReceived(topic, message) {
 				battery : 3300
 			}
 		};
-		client.publish("devices/"+PROTOCOL+"/"+EUI_me+"/miso", JSON.stringify(data_GPIO));
+
+		client.publish("greenhouse/miso/status", JSON.stringify(data_GPIO));
+		
 	} else if ((m.indexOf("pump ") !=-1)&&(m.indexOf("wind ") !=-1)) {
 		GPIO[0] = Number(m[m.indexOf("wind ")+5]); //devices/lora/807B85902000021C/miso
 		GPIO[1] = Number(m[m.indexOf("pump ")+5]); //wind 0, pump 1
@@ -35,7 +41,7 @@ function onMessageReceived(topic, message) {
 }
 function onConnected() {
 	setInterval(sendData, TIMER_INTERVAL);
-	client.subscribe("devices/"+PROTOCOL+"/"+EUI_me+"/#");
+	client.subscribe("greenhouse/miso/#");
 }
 const minTemp = 31;
 const maxTemp = 45;
@@ -97,7 +103,7 @@ function sendData() {
 	};
 	var mADC = JSON.stringify(data_ADC);
 	console.log('Sending: ' + mADC)
-	client.publish("devices/"+PROTOCOL+"/"+EUI_ADC+"/miso/adc", mADC);
+	client.publish("greenhouse/measurements", mADC);
 }
 
 
