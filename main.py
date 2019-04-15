@@ -2,19 +2,31 @@ from app import app
 from app import db
 from models import Measurement
 from datetime import datetime
-import time
 import view
 
 if __name__ == '__main__':
-	a = Measurement()
+	
+	'''a = Measurement()
+	ab = Measurement()
+	ac = Measurement()
+	ad = Measurement()
+
 	b = datetime.now()
-	a.add_new_record('0123456789012345', 17.4, b)
+	a.add_new_record('0', 17.4, b)
 	db.session.add(a)
-	db.session.commit()
-	time.sleep(3);
-	#id_dev = db.session.query(Measurement).order_by(Measurement.id)
-	for item in db.session.query(Measurement).order_by(Measurement.id)[-3:]:
-		print(item.time)
-		#print(item.id_dev, ' ', item.value, ' ', item.time)
-	print("Success!")
+
+	b = datetime.now()
+	ab.add_new_record('1', 17.54, b)
+	db.session.add(ab)
+
+	b = datetime.now()
+	ac.add_new_record('2', 2.15, b)
+	db.session.add(ac)
+
+	b = datetime.now()
+	ad.add_new_record('3', 3.15, b)
+	db.session.add(ad)
+
+	db.session.commit()'''
+
 	app.run()
