@@ -37,6 +37,7 @@ def on_get_temp(client, userdata, msg):
 	db.session.add(window_record)
 	db.session.add(valve_record)
 	db.session.commit()
+	client.publish("greenhouse/miso/gpio", payload='pump '+ str(1) +' wind '+ str(1), qos=0, retain=False)
 
 client = mqtt.Client()
 client.on_connect = on_connect
@@ -44,8 +45,8 @@ client.on_connect = on_connect
 client.connect("localhost") 
 
 def loop():
-    client.loop_forever()
-
+    client.loop_start()
+    
 thread_mqtt = threading.Thread(target=loop)
 thread_mqtt.daemon = True
 thread_mqtt.start()
