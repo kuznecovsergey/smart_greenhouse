@@ -1,5 +1,5 @@
 var PROTOCOL = 'lora';
-var MQTT_ADDRESS = 'localhost';
+var MQTT_ADDRESS = "192.168.100.113"//'localhost';
 var MQTT_PORT = 1883;
 var MQTT_CLIENT = 'smartgarden_emul';
 var EUI_ADC = "807B85902000021E";
