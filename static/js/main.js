@@ -26,7 +26,7 @@ function init_graph() {
 	dataset = new vis.DataSet();
 	var options = {
 		legend: true,  
-		height: 500, 
+		//height: 500, 
 		dataAxis: { 
 			left: {
 				range: {

@@ -6,55 +6,64 @@
     <meta name="description" content="IoT Garden" />
 
     <title>IoT Garden</title>
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="css/vis.min.css" /> 
-    <link rel="stylesheet" type="text/css" href="css/style.css" /> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /> -->
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vis.min.css') }}" /> 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
 
-	<!--<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/vis.min.js"></script>	 
-	<script src="js/mqttws31.min.js"></script>  
-	<script src="js/main.js"></script>-->
 
 	<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/vis.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/mqttws31.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/vis.min.js')}}"></script>	
 </head>
 
 
 <body>
-	<table>
-	<tr>
-	<td><input type="button" class="btn btn-disabled" onclick="toggleLight()" id="btn-light" value="Свет"/></td>
-	<td><input type="button" class="btn btn-disabled" onclick="togglePump()" id= "btn-pump" value="Насос"/></td>
-	<td><input type="button" class="btn btn-disabled" onclick="toggleMode()" id="btn-auto" value="Автономный режим"/></td>
-	</tr>
-	</table>
-	
-	<div style="background-color:white" id="visualization"></div>
-	
-	<table bgcolor=white width=100%>
-	<tr>
-	<td><div class="information">Режим работы:</div></td>
-	<td><div class="information" id="str-auto"></div></td>
-	</tr>
-	<tr>
-	<td><div class="information">Влажность почвы:</div></td>
-	<td><div class="information" id="str-humidity"></div></td>
-	<td><div class="information">Температура:</div></td>
-	<td><div class="information" id="str-temperature"></div></td>
-	<td><div class="information">Освещённость</div></td>
-	<td><div class="information" id="str-luminosity"></div></td>	
-	</tr>
-	<tr>
-	<td><div class="information">Пауза между поливами:</div></td>
-	<td><div class="information" id="next_watering"></div></td>
-	</tr>
+	<header><span>Умная теплица</span> IoT Samsung</header>
 
-	</table>
+	<section id="schema-wrapper">
+		<div id="schema-image"></div>
+
+		<div id="valve-wrapper">
+			<span>Клапан</span>
+			<div id="label-valve">Открыт</div>
+			<div id="button-valve">Закрыть</div>
+		</div>
+
+		<div id="window-wrapper">
+			<span>Окно</span>
+			<div id="label-window">Открыто</div>
+			<div id="button-window">Закрыть</div>
+		</div>
+
+		<div id="temp-wrapper">
+			<span>Температура</span>
+			<div id="label-temp">22</div>
+		</div>
+
+		<div id="hum-wrapper">
+			<span>Влажность</span>
+			<div id="label-hum">50</div>
+		</div>
+
+		
+		<div id="mode-wrapper">
+			<span>Режим работы</span>
+			<div id="button-mode">Ручной</div>
+		</div>
+
+	</section>
+
+	<section id="graph-wrapper">
+		<div id="plot1-wrapper">
+		</div>
+
+		<div id="plot2-wrapper">
+		</div>
+	</section>
+
+	<footer> ЮУрГУ Челябинск 2019</footer>
+
+	<script src="{{ url_for('static', filename='js/app.js')}}"></script>
+
 </body>
 
 </html>
