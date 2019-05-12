@@ -1,5 +1,5 @@
 
-var app = {
+var plot = {
 	
 	init: function() {
 		this.initPlot1();
@@ -46,7 +46,7 @@ var app = {
 			dataAxis: { 
 				left: {
 					range: {
-						min: 0, max: 100
+						min: 0, max: 2
 					}
 				}
 			}
@@ -82,5 +82,3 @@ var app = {
 	}
 
 }
-
-app.init()

@@ -106,6 +106,7 @@ footer {
     top: 40px; left: 480px;
 
     padding: 10px;
+    background: #efefef;
 }
 
 #valve-wrapper span, 
@@ -117,13 +118,15 @@ footer {
 }
 
 #button-valve, #button-window, #button-mode {
-    width: 100px; height: 40px;
+    width: 120px; height: 40px;
     background:rgb(41, 154, 41);
-    box-shadow: 5px 6px 19px 0px #A7A7A7;
+    box-shadow: 3px 3px 5px 0px #A7A7A7;
     padding: 10px;
     text-align: center;
     margin-top: 5px;
     cursor: pointer;
+
+    border: 2px solid #404040;
 }
 
 #window-wrapper {
@@ -139,5 +142,9 @@ footer {
 }
 
 #mode-wrapper {
-    top: 40px; left: 650px;
+    top: 324px; left: 370px;
+}
+
+#label-temp, #hum-wrapper {
+    text-align: center;
 }

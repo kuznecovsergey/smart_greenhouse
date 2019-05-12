@@ -7,12 +7,12 @@
 
     <title>IoT Garden</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vis.min.css') }}" /> 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="/static/css/vis.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 
 
-	<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/vis.min.js')}}"></script>	
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
+	<script src="/static/js/vis.min.js"></script>	
 </head>
 
 
@@ -47,6 +47,7 @@
 		
 		<div id="mode-wrapper">
 			<span>Режим работы</span>
+			<div id="label-mode">22</div>
 			<div id="button-mode">Ручной</div>
 		</div>
 
@@ -62,7 +63,9 @@
 
 	<footer> ЮУрГУ Челябинск 2019</footer>
 
-	<script src="{{ url_for('static', filename='js/app.js')}}"></script>
+	<script src="/static/js/app_plot.js"></script>	
+	<script src="/static/js/app_schema.js"></script>
+	<script src="/static/js/app_webhook.js"></script>
 
 </body>
 
