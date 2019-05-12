@@ -12,10 +12,16 @@ scheme = {
 		this.buttonMode   = document.getElementById("button-mode");
 
 		this.mode = undefined;
+
+		this.updateMode("wrong");
+		this.updateWindowLabel("wrong");
+		this.updateValveLabel("wrong");
+		this.updateTempLabel(undefined);
+		this.updateHumLabel(undefined);
 	},
 
 	updateValveLabel: function(valveText) {
-		if (valveText == "1") {
+		if (valveText == "1.0") {
 			this.labelValve.innerHTML = "Открыт";
 			this.labelValve.style.color = "rgb(41, 154, 41)";
 
@@ -24,7 +30,7 @@ scheme = {
 				this.buttonValve.style.background = "rgb(41, 154, 41)";
 			}
 
-		} else if (valveText == "0") {
+		} else if (valveText == "0.0") {
 			this.labelValve.innerHTML = "Закрыт";
 			this.labelValve.style.color = "#d49503";
 
@@ -40,7 +46,7 @@ scheme = {
 	},
 
 	updateWindowLabel: function(windowText) {
-		if (windowText == "1") {
+		if (windowText == "1.0") {
 			this.labelWindow.innerHTML = "Открыто";
 			this.labelWindow.style.color = "rgb(41, 154, 41)";
 
@@ -49,7 +55,7 @@ scheme = {
 				this.buttonWindow.style.background = "rgb(41, 154, 41)";
 			}
 
-		} else if (windowText == "0") {
+		} else if (windowText == "0.0") {
 			this.labelWindow.innerHTML = "Закрыто";
 			this.labelWindow.style.color = "#d49503";
 
@@ -114,13 +120,13 @@ scheme = {
 			this.buttonWindow.style.background = "red";
 
 			this.buttonMode.innerHTML = "Недоступно";
-			this.buttonMode.style.background = "red";
+			this.buttonMode.style.background = "#EFEFEF";
 
 			this.buttonValve.innerHTML = "Недоступно";
-			this.buttonValve.style.background = "red";
+			this.buttonValve.style.background = "#EFEFEF";
 
 			this.buttonWindow.innerHTML = "Недоступно";
-			this.buttonWindow.style.background = "red";
+			this.buttonWindow.style.background = "#EFEFEF";
 		}
 	}, 
 

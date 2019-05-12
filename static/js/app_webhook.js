@@ -9,8 +9,17 @@ webhook = {
 		this.startRequestSendingLoop();
 	},
 
-	onGetStateSuccess: function() {
+	onGetStateSuccess: function(stateDataStr) {
+		state = JSON.parse(stateDataStr);
+		//console.log(state)
 
+		plot.updatePlots(state);
+		
+		scheme.updateMode(state.mode);
+		scheme.updateWindowLabel(state.window.value);
+		scheme.updateValveLabel(state.valve.value);
+		scheme.updateTempLabel(state.tmp.value);
+		scheme.updateHumLabel(state.humidity.value);
 	},
 
 	onGetStateWrong: function() {
@@ -18,14 +27,31 @@ webhook = {
 	},
 
 	startRequestSendingLoop: function() {
+		var self = this;
+
 		setInterval(function() {
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', '/getlast', true);
+			
+			xhr.onreadystatechange = function() { 
+				if (xhr.readyState != 4) return;
+
+				if (xhr.status != 200) {
+					console.log("kek")
+				} else {
+					self.onGetStateSuccess(xhr.responseText);
+				}
+			}
+
+			xhr.send();
 
 		}, this.intervalMS);
 	}
 }
 
 webhook.init();
-
+/*
 tests = {
 	set_wrong_labels_data: function() {
 		scheme.updateMode("wrong");
@@ -55,3 +81,5 @@ tests = {
 //tests.set_labels_empty();
 //tests.set_auto_mode();
 //tests.set_manual_mode();
+
+*/
