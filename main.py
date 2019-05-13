@@ -2,7 +2,7 @@ from app import app
 from app import db
 from models import Measurement
 from datetime import datetime
-import view
+import view, mqtt
 
 if __name__ == '__main__':
 	

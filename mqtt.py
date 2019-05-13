@@ -62,5 +62,5 @@ thread_mqtt = threading.Thread(target=loop)
 thread_mqtt.daemon = True
 thread_mqtt.start()
 	
-while True:
-    pass
+#while True:
+    #pass
